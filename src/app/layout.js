@@ -1,16 +1,4 @@
-import localFont from "next/font/local";
-import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Link from "next/link";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,9 +7,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="kr">
+      <body>
+        <h1><Link href="/">WEB</Link></h1>
+        <ol>
+            <li><Link href="/read/1">html</Link></li>
+            <li><Link href="/read/2">css</Link></li>
+            <li><Link href="/read/3">js</Link></li>
+        </ol>
         {children}
+        <ul>
+            <li>
+                <Link href="/create">생성</Link>
+            </li>
+            <li>
+                <Link href="/update/1">Update</Link>
+            </li>
+            <li>
+                <button>delete</button>
+            </li>
+        </ul>
       </body>
     </html>
   );
